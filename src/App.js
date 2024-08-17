@@ -55,6 +55,7 @@ function ModalForm() {
                     ["username"]: e.target.value,
                   }));
                 }}
+                required
               />
               <label htmlFor="email">Email Address:</label>
               <input
@@ -95,7 +96,7 @@ function ModalForm() {
                 }}
                 required
               />
-              <button type="submit">Submit</button>
+              <button type="submit-button">Submit</button>
             </form>
           </div>
         )}
