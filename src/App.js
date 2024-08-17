@@ -37,9 +37,11 @@ function ModalForm() {
       <div className="formCloser" onClick={makeFormInVisible}></div>
       <div className="container">
         <h2>User Details Modal</h2>
+        
         <button className="buttonStyle" onClick={makeFormVisible}>
           Open Form
         </button>
+        
         {formVisible && (
           <div className="modal">
             <form onSubmit={formHandle}>
@@ -96,7 +98,7 @@ function ModalForm() {
                 }}
                 required
               />
-              <button type="submit-button">Submit</button>
+              <button className ="submit-button" type="submit">Submit</button>
             </form>
           </div>
         )}
