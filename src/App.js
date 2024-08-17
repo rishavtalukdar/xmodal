@@ -44,6 +44,7 @@ function ModalForm() {
         
         {formVisible && (
           <div className="modal">
+            <div className="modal-content">
             <form onSubmit={formHandle}>
               <h3>Fill Details</h3>
               <label htmlFor="username">Username:</label>
@@ -100,6 +101,7 @@ function ModalForm() {
               />
               <button className ="submit-button" type="submit">Submit</button>
             </form>
+            </div>
           </div>
         )}
       </div>
