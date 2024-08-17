@@ -16,6 +16,13 @@ h2 {
   margin-bottom: 15px;
 }
 
+.newcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;

@@ -34,76 +34,83 @@ function ModalForm() {
   };
   return (
     <div>
-      <div className="formCloser" onClick={makeFormInVisible}></div>
-      <div className="container">
-        <h2>User Details Modal</h2>
-        
-        <button className="buttonStyle" onClick={makeFormVisible}>
-          Open Form
-        </button>
-        
-        {formVisible && (
-          <div className="modal">
-            <div className="modal-content">
-            <form onSubmit={formHandle}>
-              <h3>Fill Details</h3>
-              <label htmlFor="username">Username:</label>
-              <input
-                id="username"
-                type="text"
-                value={formData.username}
-                onChange={(e) => {
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    ["username"]: e.target.value,
-                  }));
-                }}
-                required
-              />
-              <label htmlFor="email">Email Address:</label>
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => {
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    ["email"]: e.target.value,
-                  }));
-                }}
-                required
-              />
-              <label htmlFor="phone">Phone Number:</label>
-              <input
-                id="phone"
-                type="number"
-                value={formData.phone}
-                onChange={(e) => {
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    ["phone"]: e.target.value,
-                  }));
-                }}
-                required
-              />
-              <label htmlFor="dob">Date of Birth:</label>
-              <input
-                id="dob"
-                type="date"
-                value={formData.dob}
-                onChange={(e) => {
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    ["dob"]: e.target.value,
-                  }));
-                }}
-                required
-              />
-              <button className ="submit-button" type="submit">Submit</button>
-            </form>
-            </div>
+      <div className="formCloser" onClick={makeFormInVisible}>
+        <div className="container">
+          <h2>User Details Modal</h2>
+          <div className="newcontainer"
+            onClick={(e) => {
+              //do not close modal when clicked inside modal container,
+              // which is part of modal background.
+              e.stopPropagation();
+            }}>
+            <button onClick={makeFormVisible}>
+              Open Form
+            </button>
+
+            {formVisible && (
+              <div className="modal">
+                <div className="modal-content">
+                  <form onSubmit={formHandle}>
+                    <h3>Fill Details</h3>
+                    <label htmlFor="username">Username:</label>
+                    <input
+                      id="username"
+                      type="text"
+                      value={formData.username}
+                      onChange={(e) => {
+                        setFormData((prevState) => ({
+                          ...prevState,
+                          ["username"]: e.target.value,
+                        }));
+                      }}
+                      required
+                    />
+                    <label htmlFor="email">Email Address:</label>
+                    <input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => {
+                        setFormData((prevState) => ({
+                          ...prevState,
+                          ["email"]: e.target.value,
+                        }));
+                      }}
+                      required
+                    />
+                    <label htmlFor="phone">Phone Number:</label>
+                    <input
+                      id="phone"
+                      type="number"
+                      value={formData.phone}
+                      onChange={(e) => {
+                        setFormData((prevState) => ({
+                          ...prevState,
+                          ["phone"]: e.target.value,
+                        }));
+                      }}
+                      required
+                    />
+                    <label htmlFor="dob">Date of Birth:</label>
+                    <input
+                      id="dob"
+                      type="date"
+                      value={formData.dob}
+                      onChange={(e) => {
+                        setFormData((prevState) => ({
+                          ...prevState,
+                          ["dob"]: e.target.value,
+                        }));
+                      }}
+                      required
+                    />
+                    <button className="submit-button" type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
